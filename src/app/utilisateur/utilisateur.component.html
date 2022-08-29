@@ -1,0 +1,39 @@
+<div>
+    <h1>Ajouter un utilisateur</h1>
+    <form action="" (ngSubmit)="addUtilisateur()">
+        <table>
+            <tr>
+                <td>Nom</td>
+                <td><input type="text" name="nom" id="" [(ngModel)]="utilisateur.nom"></td>
+            </tr>
+            <tr>
+                <td>Prénom</td>
+                <td><input type="text" name="prenom" id="" [(ngModel)]="utilisateur.prenom"></td>
+            </tr>
+            <tr>
+                <td>Date  de naissance</td>
+                <td><input type="date" name="dateNaissance" id="" [(ngModel)]="utilisateur.dateNaissance"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button>Ajouter</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date de naissance</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.nom}}</td>
+        <td>{{u.prenom}}</td>
+        <td>{{u.dateNaissance}}</td>
+        <td><button (click)="deleteUtilisateur(u.id)">Supprimer</button></td>
+    </tr>
+</table>

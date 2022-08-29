@@ -1,0 +1,32 @@
+<div>
+    <h1>Ajouter une réservation</h1>
+    <form action="" (ngSubmit)="addAvis()">
+        <table>
+            <tr>
+                <td>Titre</td>
+                <td><input type="text" name="titre" id="" [(ngModel)]="avis.titre"></td>
+            <tr>
+            <tr>
+                <td>Description</td>
+                <td><input type="text" name="description" id="" [(ngModel)]="avis.description"></td>
+            <tr>
+                <td colspan="2"><button>Ajouter</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let a of aviss">
+        <td>{{a.id}}</td>
+        <td>{{a.titre}}</td>
+        <td>{{a.description}}</td>
+        <td><button (click)="deleteAvis(a.id)">Supprimer</button></td>
+    </tr>
+</table>
